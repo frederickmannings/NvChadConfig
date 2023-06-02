@@ -62,13 +62,31 @@ local plugins = {
   },
   {
     "davidhalter/jedi-vim",
-
+    ft="python",
   },
   {
-    "petobens/poet-v",
+    'petobens/poet-v',
+    ft="python",
   },
+  {
+    'neovim/pynvim',
+  },
+  {
+    "nvie/vim-flake8",
+    ft="python",
+  },
+  {
+    "stsewd/isort.nvim",
+    ft="python",
+  },
+  {
+    "averms/black-nvim",
+    ft="python",
+  },
+  {
+    "Integralist/vim-mypy",
+    ft="python",
+  }
 }
 
 return plugins
-
-

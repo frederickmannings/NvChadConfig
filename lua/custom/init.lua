@@ -1,6 +1,4 @@
 vim.opt.colorcolumn = "80"
-vim.g.poetv_auto_activate = 1
-vim.g.poetv_set_environment = 1
 
 local enable_providers = {
   "python3_provider",

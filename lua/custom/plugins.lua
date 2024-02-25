@@ -4,9 +4,10 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
-        "mypy", 
+        "mypy",
         "pyright",
-        "ruff"
+        "ruff",
+        "marksman"
       },
     },
   },

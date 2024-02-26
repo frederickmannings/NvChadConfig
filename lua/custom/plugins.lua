@@ -7,7 +7,6 @@ local plugins = {
         "mypy",
         "pyright",
         "ruff",
-        "marksman"
       },
     },
   },

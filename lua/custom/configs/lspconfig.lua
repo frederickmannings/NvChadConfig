@@ -27,12 +27,6 @@ local servers = {
       }
     },
   },
-  marksman = {
-    setup = {
-      on_attach = on_attach,
-      capabilities = capabilities,
-    }
-  }
 }
 
 for _, serverName in ipairs(vim.tbl_keys(servers)) do

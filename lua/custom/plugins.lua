@@ -5,9 +5,9 @@ local plugins = {
       ensure_installed = {
         "gopls",
         "mypy",
-        "pyright",
         "ruff",
         "lua-language-server",
+        "jedi-language-server",
       },
     },
   },

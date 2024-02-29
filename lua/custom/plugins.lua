@@ -7,6 +7,7 @@ local plugins = {
         "mypy",
         "pyright",
         "ruff",
+        "lua-language-server",
       },
     },
   },

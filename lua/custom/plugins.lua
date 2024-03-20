@@ -6,6 +6,7 @@ local plugins = {
         "gopls",
         "lua-language-server",
         "jedi-language-server",
+        "buf-language-server",
       },
     },
   },

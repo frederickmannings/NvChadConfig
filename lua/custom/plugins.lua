@@ -35,15 +35,15 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^4",
-    ft = { "rust" },
-    dependencies = "neovim/nvim-lspconfig",
-    config = function()
-      require "custom.configs.rustaceanvim"
-    end
-  },
+  -- {
+  --   "mrcjkb/rustaceanvim",
+  --   version = "^4",
+  --   ft = { "rust" },
+  --   dependencies = "neovim/nvim-lspconfig",
+  --   config = function()
+  --     require "custom.configs.rustaceanvim"
+  --   end
+  -- },
   {
     'saecki/crates.nvim',
     ft = {"toml"},
@@ -62,6 +62,17 @@ local plugins = {
     ft = "rust",
     init = function ()
       vim.g.rustfmt_autosave = 1
+    end
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    ft="rust",
+    dependencies = "neovim/nvim-lspconfig",
+    opts=function ()
+      return require "custom.configs.rust-tools"
+    end,
+    confg = function(_, opts)
+      require('rust-tools').setup(opts)
     end
   },
   {

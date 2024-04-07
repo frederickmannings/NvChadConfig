@@ -113,5 +113,13 @@ local plugins = {
       vim.cmd [[silent! GoInstallDeps]]
     end,
   },
+  {
+    "voldikss/vim-floaterm",
+    event="VeryLazy",
+    keys = {
+      { "<leader>o", "<cmd>FloatermToggle<cr>", desc = "Show floating terminal"},
+    }
+  },
 }
+
 return plugins

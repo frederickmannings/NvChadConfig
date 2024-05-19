@@ -5,6 +5,17 @@ local capabilities = configs.capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
+
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
+
+
 local servers = {
   gopls = {
     setup = {
@@ -43,6 +54,17 @@ local servers = {
     setup = {
       on_attach = on_attach,
       capabilities = capabilities,
+      init_options = {
+        preferences = {
+          disableSuggestions = false,
+        }
+      },
+      commands = {
+        OrganizeImports = {
+          organize_imports,
+          description = "Organise Imports",
+        }
+      }
     }
   },
   tailwindcss = {

@@ -38,6 +38,24 @@ local servers = {
       on_attach = on_attach,
       capabilities = capabilities,
     }
+  },
+  tsserver = {
+    setup = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  },
+  tailwindcss = {
+    setup = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  },
+  eslint = {
+    setup = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
   }
 }
 

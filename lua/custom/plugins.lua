@@ -10,8 +10,46 @@ local plugins = {
         "jedi-language-server",
         "buf-language-server",
         "rust-analyzer",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "eslint-lsp",
+        "prettierd",
       },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "css",
+        "go",
+        "rust",
+        "python"
+        }
+    end
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    },
+    config = function ()
+      require("nvim-ts-autotag").setup()
+    end
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    opts = function ()
+      return require "custom.configs.null-ls"
+    end
   },
   {
     "mfussenegger/nvim-dap",
@@ -95,13 +133,13 @@ local plugins = {
       return M
     end,
   },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
-    opts = function()
-      return require "custom.configs.null-ls"
-    end,
-  },
+  -- {
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   ft = "go",
+  --   opts = function()
+  --     return require "custom.configs.null-ls"
+  --   end,
+  -- },
   {
     "olexsmir/gopher.nvim",
     ft = "go",

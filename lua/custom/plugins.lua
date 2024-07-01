@@ -186,6 +186,18 @@ local plugins = {
       { "<leader>o", "<cmd>FloatermToggle<cr>", desc = "Show floating terminal"},
     }
   },
+  {
+  "iamcco/markdown-preview.nvim",
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  build = "cd app && yarn install",
+  init = function()
+    vim.g.mkdp_filetypes = { "markdown" }
+    vim.g.mkdp_browser="/usr/bin/google-chrome"
+    vim.g.mkdp_echo_preview_url=1
+    vim.g.mkdp_port='6060'
+  end,
+  ft = { "markdown" },
+  },
 }
 
 return plugins

@@ -14,7 +14,10 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 
-
+local function get_python_path()
+  local cwd = vim.fn.getcwd()
+  return cwd .. '/.venv/bin/python'
+end
 
 local servers = {
   gopls = {
@@ -42,6 +45,11 @@ local servers = {
     setup = {
       on_attach = on_attach,
       capabilities = capabilities,
+      init_options = {
+        workspace = {
+          environmentPath = get_python_path()
+        }
+      }
     }
   },
   bufls = {

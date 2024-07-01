@@ -43,7 +43,7 @@ M.dap_go = {
 M.gopher = {
   plugin = true,
   n = {
-    ["< eader>gsj"] = {
+    ["<leader>gsj"] = {
       "<cmd> GoTagAdd json <CR>",
       "Add json struct tags"
     },

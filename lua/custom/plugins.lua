@@ -14,7 +14,7 @@ local plugins = {
         "tailwindcss-language-server",
         "eslint-lsp",
         "prettierd",
-        "js-debug-adapter"
+        "js-debug-adapter",
       },
     },
   },
@@ -48,6 +48,7 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
+    ft = {"python"},
     opts = function ()
       return require "custom.configs.null-ls"
     end
@@ -208,7 +209,7 @@ local plugins = {
       "typescript",
       "golang"
     }
-  }
+  },
 }
 
 return plugins

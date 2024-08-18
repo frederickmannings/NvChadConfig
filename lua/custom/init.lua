@@ -16,3 +16,10 @@ vim.g.mkdp_port='6060'
 
 -- Editor config
 vim.wo.wrap = false
+
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  }
+})

@@ -13,3 +13,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.g.mkdp_browser="/usr/bin/google-chrome"
 vim.g.mkdp_echo_preview_url=1
 vim.g.mkdp_port='6060'
+
+-- Editor config
+vim.wo.wrap = false
+
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  }
+})

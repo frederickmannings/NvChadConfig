@@ -14,7 +14,7 @@ local plugins = {
         "tailwindcss-language-server",
         "eslint-lsp",
         "prettierd",
-        "js-debug-adapter"
+        "js-debug-adapter",
       },
     },
   },
@@ -29,8 +29,15 @@ local plugins = {
         "css",
         "go",
         "rust",
-        "python"
+        "python",
+        "markdown"
         }
+    end,
+    config  = function (_, opts)
+      dofile(vim.g.base46_cache .. "syntax")
+      require("nvim-treesitter.configs").setup(opts)
+      -- tell treesitter to use the markdown parser for mdx files
+      vim.treesitter.language.register('markdown', 'mdx')
     end
   },
   {
@@ -48,6 +55,7 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
+    ft = {"python"},
     opts = function ()
       return require "custom.configs.null-ls"
     end
@@ -202,11 +210,45 @@ local plugins = {
     "danymat/neogen",
     config = true,
     -- Uncomment next line if you want to follow only stable versions
-    version = "*",
+    -- version = "*",
     ft = {
       "python",
       "typescript",
       "golang"
+    }
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async',  -- Ensure promise-async is loaded
+    config = function()
+      -- General settings
+      vim.o.foldcolumn = '1'  -- Display fold column
+      vim.o.foldlevel = 99  -- Start with all folds open
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+
+      -- -- Key mappings for folding
+      vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+      vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+      -- Option 2: Setup with native Neovim LSP
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true
+      }
+      local language_servers = require("lspconfig").util.available_servers()
+      for _, ls in ipairs(language_servers) do
+        require('lspconfig')[ls].setup({
+          capabilities = capabilities
+        })
+      end
+      require('ufo').setup()
+    end,
+    ft = {
+      "python",
+      "typescrip",
+      "golang",
     }
   }
 }

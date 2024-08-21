@@ -12,6 +12,7 @@ local plugins = {
         "rust-analyzer",
         "typescript-language-server",
         "tailwindcss-language-server",
+        "svelte-language-server",
         "eslint-lsp",
         "prettierd",
         "js-debug-adapter",

@@ -86,6 +86,12 @@ local servers = {
       on_attach = on_attach,
       capabilities = capabilities,
     }
+  },
+  svelte = {
+    setup = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
   }
 }
 

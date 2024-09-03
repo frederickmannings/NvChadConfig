@@ -251,7 +251,14 @@ local plugins = {
       "typescrip",
       "golang",
     }
-  }
+  },
+  {
+    "supermaven-inc/supermaven-nvim",
+    ft = {"python", "golang", "typescript"},
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  },
 }
 
 return plugins

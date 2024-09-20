@@ -17,7 +17,9 @@ local opts = {
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.golines,
-    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.prettierd.with({
+      prefer_local=".prettierrc"
+    }),
     null_ls.builtins.diagnostics.mypy.with({
       command = get_mypy_path(),
       extra_args = function()

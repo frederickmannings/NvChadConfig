@@ -59,7 +59,7 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
-    ft = {"python", "go"},
+    ft = {"python", "go", "svelte", "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "markdown"},
     opts = function ()
       return require "custom.configs.null-ls"
     end
@@ -173,13 +173,6 @@ local plugins = {
       return M
     end,
   },
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   ft = "go",
-  --   opts = function()
-  --     return require "custom.configs.null-ls"
-  --   end,
-  -- },
   {
     "olexsmir/gopher.nvim",
     ft = "go",
@@ -251,7 +244,7 @@ local plugins = {
     end,
     ft = {
       "python",
-      "typescrip",
+      "typescript",
       "golang",
     }
   },

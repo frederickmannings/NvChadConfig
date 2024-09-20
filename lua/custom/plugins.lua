@@ -6,6 +6,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
+        "gofumpt",
+        "goimports_reviser",
+        "golines",
         "lua-language-server",
         "jedi-language-server",
         "buf-language-server",
@@ -56,7 +59,7 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
-    ft = {"python"},
+    ft = {"python", "go"},
     opts = function ()
       return require "custom.configs.null-ls"
     end
@@ -252,6 +255,19 @@ local plugins = {
       "golang",
     }
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    ft = {"go"},
+    config = function(_, opts) require'lsp_signature'.setup(opts) end
+  },
+  {
+    "simrat39/inlay-hints.nvim",
+    event = "VeryLazy",
+    opts = {},
+    ft = {"go"}
+  }
   -- {
   --   "supermaven-inc/supermaven-nvim",
   --   ft = {"python", "golang", "typescript"},

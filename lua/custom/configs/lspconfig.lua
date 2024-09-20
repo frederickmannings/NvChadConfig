@@ -4,6 +4,7 @@ local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
+local ih = require "inlay-hints"
 
 
 local function organize_imports()
@@ -22,7 +23,9 @@ end
 local servers = {
   gopls = {
     setup = {
-      on_attach = on_attach,
+      on_attach = function(c, b)
+        ih.on_attach(c, b)
+      end,
       capabilities = capabilities,
       cmd = {"gopls"},
       filetypes = {"go", "gomod", "gowork", "gotmpl"},
@@ -31,6 +34,15 @@ local servers = {
         gopls = {
           completeUnimported = true,
           usePlaceholders = true,
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
           analyses = {
             unusedParams = true,
             fieldalignment = true,

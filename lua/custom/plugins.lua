@@ -19,6 +19,7 @@ local plugins = {
         "eslint-lsp",
         "prettierd",
         "js-debug-adapter",
+        "buf-language-server",
       },
     },
   },
@@ -206,12 +207,11 @@ local plugins = {
   {
     "danymat/neogen",
     config = true,
-    -- Uncomment next line if you want to follow only stable versions
-    -- version = "*",
     ft = {
       "python",
       "typescript",
-      "golang"
+      "golang",
+      "go"
     }
   },
   {

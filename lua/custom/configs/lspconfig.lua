@@ -43,12 +43,12 @@ local servers = {
             parameterNames = true,
             rangeVariableTypes = true,
           },
-          analyses = {
-            unusedParams = true,
-            fieldalignment = true,
-            unusedwrite = true,
-            useany = true,
-          },
+          -- analyses = {
+          --   unusedParams = true,
+          --   fieldalignment = true,
+          --   unusedwrite = true,
+          --   useany = true,
+          -- },
           buildFlags ={"-tags=tools"}
         }
       }

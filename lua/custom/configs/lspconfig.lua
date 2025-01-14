@@ -48,7 +48,8 @@ local servers = {
             fieldalignment = true,
             unusedwrite = true,
             useany = true,
-          }
+          },
+          buildFlags ={"-tags=tools"}
         }
       }
     },
@@ -62,12 +63,6 @@ local servers = {
           environmentPath = get_python_path()
         }
       }
-    }
-  },
-  bufls = {
-    setup = {
-      on_attach = on_attach,
-      capabilities = capabilities,
     }
   },
   ts_ls = {

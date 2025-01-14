@@ -11,7 +11,6 @@ local plugins = {
         "golines",
         "lua-language-server",
         "jedi-language-server",
-        "buf-language-server",
         "rust-analyzer",
         "typescript-language-server",
         "tailwindcss-language-server",
@@ -19,7 +18,6 @@ local plugins = {
         "eslint-lsp",
         "prettierd",
         "js-debug-adapter",
-        "buf-language-server",
       },
     },
   },
@@ -260,14 +258,15 @@ local plugins = {
     event = "VeryLazy",
     opts = {},
     ft = {"go"}
+  },
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end
   }
-  -- {
-  --   "supermaven-inc/supermaven-nvim",
-  --   ft = {"python", "golang", "typescript"},
-  --   config = function()
-  --     require("supermaven-nvim").setup({})
-  --   end,
-  -- },
 }
 
 return plugins
